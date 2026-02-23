@@ -1,0 +1,14 @@
+[project]
+name = "video-editor-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ffmpeg-python>=0.2.0",
+    "langchain>=1.2.10",
+    "langchain-ollama>=1.0.1",
+    "langgraph>=1.0.9",
+    "moviepy>=2.2.1",
+    "openai-whisper>=1.1.10",
+]
