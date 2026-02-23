@@ -19,47 +19,9 @@ It demonstrates how to build a production-safe AI orchestration layer for video 
 
 ---
 
+
 ## 🏗 Architecture
-┌──────────────────────────┐
-│       User Request       │
-└──────────────────────────┘
-              │
-              ▼
-┌──────────────────────────┐
-│  LLaMA 3 Planner         │
-│  (LangChain + Ollama)    │
-└──────────────────────────┘
-              │
-              ▼
-┌──────────────────────────┐
-│  Structured Plan         │
-│  (Pydantic Schema)       │
-└──────────────────────────┘
-              │
-              ▼
-┌──────────────────────────┐
-│     Validation Layer     │
-│  - Tool Allowlist        │
-│  - Param Validation      │
-└──────────────────────────┘
-              │
-              ▼
-┌──────────────────────────┐
-│    Execution Engine      │
-│  - Sequential Execution  │
-│  - Artifact Tracking     │
-└──────────────────────────┘
-              │
-              ▼
-┌──────────────────────────┐
-│     Video Tools Layer    │
-│  FFmpeg / MoviePy        │
-└──────────────────────────┘
-              │
-              ▼
-┌──────────────────────────┐
-│    Final Output Video    │
-└──────────────────────────┘
+<img src="image.png" width="400" height="700" alt="Demo">
 
 
 The system separates:
@@ -98,7 +60,7 @@ Tools are strictly validated before execution.
 
 ```bash
 git clone git@github.com:pankajmi/video-editor-agent.git
-cd video-agent
+cd video-editor-agent
 ```
 
 ### 2. Create virtual environment & Install deps
@@ -122,14 +84,14 @@ python main.py
 ```
 
 The agent will:
-Extract video metadata
-Generate structured editing plan
-Validate tool usage
-Execute tools sequentially
-Produce final edited video
+-Extract video metadata
+-Generate structured editing plan
+-Validate tool usage
+-Execute tools sequentially
+-Produce final edited video
 
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 LangGraph state machine orchestration
 Parallel DAG execution
 Highlight detection via transcript
